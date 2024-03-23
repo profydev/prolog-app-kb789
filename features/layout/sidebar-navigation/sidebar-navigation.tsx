@@ -16,6 +16,10 @@ const menuItems = [
   { text: "Settings", iconSrc: "/icons/settings.svg", href: Routes.settings },
 ];
 
+function sendEmail() {
+  window.open("mailto:support@prolog-app.com?subject=Support Request");
+}
+
 export function SidebarNavigation() {
   const router = useRouter();
   const { isSidebarCollapsed, toggleSidebar } = useContext(NavigationContext);
@@ -83,7 +87,7 @@ export function SidebarNavigation() {
               text="Support"
               iconSrc="/icons/support.svg"
               isCollapsed={isSidebarCollapsed}
-              onClick={() => alert("Support")}
+              onClick={() => sendEmail()}
             />
             <MenuItemButton
               text="Collapse"
